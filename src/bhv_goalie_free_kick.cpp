@@ -106,40 +106,40 @@ Bhv_GoalieFreeKick::execute( rcsc::PlayerAgent * agent )
     // check stamina recovery or wait teammate
     rcsc::Rect2D our_pen( rcsc::Vector2D( -52.5, -40.0 ),
                           rcsc::Vector2D( -36.0, 40.0 ) );
-    if ( time_diff < 50
-         || agent->world().setplayCount() < 3
-         || ( time_diff < rcsc::ServerParam::i().dropBallTime() - 15
-              && ( agent->world().self().stamina() < rcsc::ServerParam::i().staminaMax() * 0.9
-                   || agent->world().existTeammateIn( our_pen, 20, true )
-                   )
-              )
-         )
-    {
-        doWait( agent );
-        return true;
-    }
+    //if ( time_diff < 50
+    //     || agent->world().setplayCount() < 3
+    //     || ( time_diff < rcsc::ServerParam::i().dropBallTime() - 15
+    //          && ( agent->world().self().stamina() < rcsc::ServerParam::i().staminaMax() * 0.9
+    //               || agent->world().existTeammateIn( our_pen, 20, true )
+    //               )
+    //          )
+    //     )
+    //{
+    //    doWait( agent );
+    //    return true;
+    //}
 
     // second move
-    if ( ! s_second_move )
-    {
-        rcsc::Vector2D kick_point = getKickPoint( agent );
-        agent->doMove( kick_point.x, kick_point.y );
-        agent->setNeckAction( new rcsc::Neck_ScanField );
-        s_second_move = true;
-        s_second_wait_count = 0;
-        return true;
-    }
+    //if ( ! s_second_move )
+    //{
+    //    rcsc::Vector2D kick_point = getKickPoint( agent );
+    //    agent->doMove( kick_point.x, kick_point.y );
+    //    agent->setNeckAction( new rcsc::Neck_ScanField );
+    //    s_second_move = true;
+    //    s_second_wait_count = 0;
+    //    return true;
+    //}
 
-    s_second_wait_count++;
+    //s_second_wait_count++;
 
     // after second move
     // wait see info
-    if ( s_second_wait_count < 5
-         || agent->world().seeTime() != agent->world().time() )
-    {
-        doWait( agent );
-        return true;
-    }
+    //if ( s_second_wait_count < 5
+    //     || agent->world().seeTime() != agent->world().time() )
+    //{
+    //    doWait( agent );
+    //    return true;
+    //}
 
     s_first_move = false;
     s_second_move = false;

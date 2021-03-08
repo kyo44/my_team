@@ -78,7 +78,8 @@ RoleGoalie::execute( PlayerAgent * agent )
     if ( agent->world().time().cycle()
          > agent->world().self().catchTime().cycle() + ServerParam::i().catchBanCycle()
          && agent->world().ball().distFromSelf() < ServerParam::i().catchableArea() - 0.05
-         && our_penalty.contains( agent->world().ball().pos() ) )
+         && our_penalty.contains( agent->world().ball().pos() )
+	 && agent->world().lastKickerSide() != agent->world().ourSide() )
     {
         dlog.addText( Logger::ROLE,
                       __FILE__": catchable. ball dist=%.1f, my_catchable=%.1f",

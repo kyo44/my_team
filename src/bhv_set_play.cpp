@@ -96,8 +96,13 @@ Bhv_SetPlay::execute( PlayerAgent * agent )
 
     if ( wm.self().goalie() )
     {
-        if ( wm.gameMode().type() != GameMode::BackPass_
-             && wm.gameMode().type() != GameMode::IndFreeKick_ )
+	if ( wm.gameMode().type() == GameMode::GoalKick_ 
+	     && wm.gameMode().side() == wm.ourSide() )
+	{
+	    Bhv_SetPlayGoalKick().execute( agent );
+	}
+        else if ( wm.gameMode().type() != GameMode::BackPass_
+                  && wm.gameMode().type() != GameMode::IndFreeKick_ )
         {
             Bhv_GoalieFreeKick().execute( agent );
         }
@@ -445,7 +450,7 @@ Bhv_SetPlay::is_kicker( const PlayerAgent * agent )
     double second_min_dist2 = std::numeric_limits< double >::max();
     for ( int unum = 1; unum <= 11; ++unum )
     {
-        if ( unum == wm.ourGoalieUnum() ) continue;
+        //if ( unum == wm.ourGoalieUnum() ) continue;
 
         Vector2D home_pos = Strategy::i().getPosition( unum );
         if ( ! home_pos.isValid() ) continue;

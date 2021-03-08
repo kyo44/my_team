@@ -209,7 +209,12 @@ Bhv_BasicOffensiveKick::execute( PlayerAgent * agent )
     // opp is far from me
     if ( nearest_opp_dist > 5.0 )
     {
-        dlog.addText( Logger::TEAM,
+	if ( wm.self().pos().absX() > 30.0 )
+	{
+		drib_target.y = 10.0;
+		if ( wm.self().pos().y < 0.0 ) drib_target.y *= -1.0;
+	}        
+	dlog.addText( Logger::TEAM,
                       __FILE__": opp far. dribble(%.1f, %.1f)",
                       drib_target.x, drib_target.y );
         agent->debugClient().addMessage( "OffKickDrib(4)" );

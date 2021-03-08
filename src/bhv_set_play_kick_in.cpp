@@ -276,35 +276,35 @@ Bhv_SetPlayKickIn::doKickWait( PlayerAgent * agent )
     const int real_set_play_count
         = static_cast< int >( wm.time().cycle() - wm.lastSetPlayStartTime().cycle() );
 
-    if ( real_set_play_count >= ServerParam::i().dropBallTime() - 5 )
-    {
-        dlog.addText( Logger::TEAM,
-                      __FILE__": (doKickWait) real set play count = %d > drop_time-10, force kick mode",
-                      real_set_play_count );
-        return false;
-    }
+    //if ( real_set_play_count >= ServerParam::i().dropBallTime() - 5 )
+    //{
+    //    dlog.addText( Logger::TEAM,
+    //                  __FILE__": (doKickWait) real set play count = %d > drop_time-10, force kick mode",
+    //                  real_set_play_count );
+    //    return false;
+    //}
 
-    if ( Bhv_SetPlay::is_delaying_tactics_situation( agent ) )
-    {
-        agent->debugClient().addMessage( "KickIn:Delaying" );
-        dlog.addText( Logger::TEAM,
-                      __FILE__": (doKickWait) delaying" );
+    //if ( Bhv_SetPlay::is_delaying_tactics_situation( agent ) )
+    //{
+    //    agent->debugClient().addMessage( "KickIn:Delaying" );
+    //    dlog.addText( Logger::TEAM,
+    //                  __FILE__": (doKickWait) delaying" );
 
-        Body_TurnToPoint( Vector2D( 0.0, 0.0 ) ).execute( agent );
-        agent->setNeckAction( new Neck_ScanField() );
-        return true;
-    }
+    //    Body_TurnToPoint( Vector2D( 0.0, 0.0 ) ).execute( agent );
+    //    agent->setNeckAction( new Neck_ScanField() );
+    //    return true;
+    //}
 
-    if ( wm.teammatesFromBall().empty() )
-    {
-        agent->debugClient().addMessage( "KickIn:NoTeammate" );
-        dlog.addText( Logger::TEAM,
-                      __FILE__": (doKickWait) no teammate" );
+    //if ( wm.teammatesFromBall().empty() )
+    //{
+    //    agent->debugClient().addMessage( "KickIn:NoTeammate" );
+    //    dlog.addText( Logger::TEAM,
+    //                  __FILE__": (doKickWait) no teammate" );
 
-        Body_TurnToPoint( Vector2D( 0.0, 0.0 ) ).execute( agent );
-        agent->setNeckAction( new Neck_ScanField() );
-        return true;
-    }
+    //    Body_TurnToPoint( Vector2D( 0.0, 0.0 ) ).execute( agent );
+    //    agent->setNeckAction( new Neck_ScanField() );
+    //    return true;
+    //}
 
     if ( wm.setplayCount() <= 3 )
     {
@@ -317,27 +317,27 @@ Bhv_SetPlayKickIn::doKickWait( PlayerAgent * agent )
         return true;
     }
 
-    if ( wm.setplayCount() >= 15
-         && wm.seeTime() == wm.time()
-         && wm.self().stamina() > ServerParam::i().staminaMax() * 0.6 )
-    {
-        dlog.addText( Logger::TEAM,
-                      __FILE__": (doKickWait) set play count = %d, force kick mode",
-                      wm.setplayCount() );
-        return false;
-    }
+    //if ( wm.setplayCount() >= 15
+    //     && wm.seeTime() == wm.time()
+    //     && wm.self().stamina() > ServerParam::i().staminaMax() * 0.6 )
+    //{
+    //    dlog.addText( Logger::TEAM,
+    //                  __FILE__": (doKickWait) set play count = %d, force kick mode",
+    //                  wm.setplayCount() );
+    //    return false;
+    //}
 
-    if ( wm.seeTime() != wm.time()
-         || wm.self().stamina() < ServerParam::i().staminaMax() * 0.9 )
-    {
-        Body_TurnToBall().execute( agent );
-        agent->setNeckAction( new Neck_ScanField() );
+    //if ( wm.seeTime() != wm.time()
+    //     || wm.self().stamina() < ServerParam::i().staminaMax() * 0.9 )
+    //{
+    //    Body_TurnToBall().execute( agent );
+    //  agent->setNeckAction( new Neck_ScanField() );
 
-        agent->debugClient().addMessage( "KickIn:Wait%d", wm.setplayCount() );
-        dlog.addText( Logger::TEAM,
-                      __FILE__": (doKickWait) no see or recover" );
-        return true;
-    }
+    //    agent->debugClient().addMessage( "KickIn:Wait%d", wm.setplayCount() );
+    //    dlog.addText( Logger::TEAM,
+    //                  __FILE__": (doKickWait) no see or recover" );
+    //    return true;
+    //}
 
     return false;
 }
