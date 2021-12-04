@@ -9,7 +9,7 @@ echo " All rights reserved."
 echo "******************************************************************"
 
 
-LIBPATH=/home/hatakeyama/rcss/lib
+LIBPATH=/home/hatakeyama/rcss/teams/base_team/Agent2d/lib
 if [ x"$LIBPATH" != x ]; then
   if [ x"$LD_LIBRARY_PATH" = x ]; then
     LD_LIBRARY_PATH=$LIBPATH

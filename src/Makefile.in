@@ -145,6 +145,7 @@ am__objects_3 = sample_player-bhv_basic_move.$(OBJEXT) \
 	sample_player-bhv_basic_offensive_kick.$(OBJEXT) \
 	sample_player-bhv_basic_tackle.$(OBJEXT) \
 	sample_player-bhv_custom_before_kick_off.$(OBJEXT) \
+	sample_player-bhv_defensive_move.$(OBJEXT) \
 	sample_player-bhv_go_to_static_ball.$(OBJEXT) \
 	sample_player-bhv_goalie_basic_move.$(OBJEXT) \
 	sample_player-bhv_goalie_chase_ball.$(OBJEXT) \
@@ -375,6 +376,7 @@ PLAYERSOURCES = \
 	bhv_basic_offensive_kick.cpp \
 	bhv_basic_tackle.cpp \
 	bhv_custom_before_kick_off.cpp \
+	bhv_defensive_move.cpp \
 	bhv_go_to_static_ball.cpp \
 	bhv_goalie_basic_move.cpp \
 	bhv_goalie_chase_ball.cpp \
@@ -418,6 +420,7 @@ PLAYERHEADERS = \
 	bhv_basic_offensive_kick.h \
 	bhv_basic_tackle.h \
 	bhv_custom_before_kick_off.h \
+	bhv_defensive_move.h \
 	bhv_go_to_static_ball.h \
 	bhv_goalie_basic_move.h \
 	bhv_goalie_chase_ball.h \
@@ -702,6 +705,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sample_player-bhv_basic_tackle.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sample_player-bhv_chain_action.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sample_player-bhv_custom_before_kick_off.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sample_player-bhv_defensive_move.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sample_player-bhv_go_to_static_ball.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sample_player-bhv_goalie_basic_move.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sample_player-bhv_goalie_chase_ball.Po@am__quote@
@@ -1294,6 +1298,20 @@ sample_player-bhv_custom_before_kick_off.obj: bhv_custom_before_kick_off.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bhv_custom_before_kick_off.cpp' object='sample_player-bhv_custom_before_kick_off.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sample_player_CXXFLAGS) $(CXXFLAGS) -c -o sample_player-bhv_custom_before_kick_off.obj `if test -f 'bhv_custom_before_kick_off.cpp'; then $(CYGPATH_W) 'bhv_custom_before_kick_off.cpp'; else $(CYGPATH_W) '$(srcdir)/bhv_custom_before_kick_off.cpp'; fi`
+
+sample_player-bhv_defensive_move.o: bhv_defensive_move.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sample_player_CXXFLAGS) $(CXXFLAGS) -MT sample_player-bhv_defensive_move.o -MD -MP -MF $(DEPDIR)/sample_player-bhv_defensive_move.Tpo -c -o sample_player-bhv_defensive_move.o `test -f 'bhv_defensive_move.cpp' || echo '$(srcdir)/'`bhv_defensive_move.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sample_player-bhv_defensive_move.Tpo $(DEPDIR)/sample_player-bhv_defensive_move.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bhv_defensive_move.cpp' object='sample_player-bhv_defensive_move.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sample_player_CXXFLAGS) $(CXXFLAGS) -c -o sample_player-bhv_defensive_move.o `test -f 'bhv_defensive_move.cpp' || echo '$(srcdir)/'`bhv_defensive_move.cpp
+
+sample_player-bhv_defensive_move.obj: bhv_defensive_move.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sample_player_CXXFLAGS) $(CXXFLAGS) -MT sample_player-bhv_defensive_move.obj -MD -MP -MF $(DEPDIR)/sample_player-bhv_defensive_move.Tpo -c -o sample_player-bhv_defensive_move.obj `if test -f 'bhv_defensive_move.cpp'; then $(CYGPATH_W) 'bhv_defensive_move.cpp'; else $(CYGPATH_W) '$(srcdir)/bhv_defensive_move.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sample_player-bhv_defensive_move.Tpo $(DEPDIR)/sample_player-bhv_defensive_move.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bhv_defensive_move.cpp' object='sample_player-bhv_defensive_move.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sample_player_CXXFLAGS) $(CXXFLAGS) -c -o sample_player-bhv_defensive_move.obj `if test -f 'bhv_defensive_move.cpp'; then $(CYGPATH_W) 'bhv_defensive_move.cpp'; else $(CYGPATH_W) '$(srcdir)/bhv_defensive_move.cpp'; fi`
 
 sample_player-bhv_go_to_static_ball.o: bhv_go_to_static_ball.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sample_player_CXXFLAGS) $(CXXFLAGS) -MT sample_player-bhv_go_to_static_ball.o -MD -MP -MF $(DEPDIR)/sample_player-bhv_go_to_static_ball.Tpo -c -o sample_player-bhv_go_to_static_ball.o `test -f 'bhv_go_to_static_ball.cpp' || echo '$(srcdir)/'`bhv_go_to_static_ball.cpp

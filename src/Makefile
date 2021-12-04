@@ -145,6 +145,7 @@ am__objects_3 = sample_player-bhv_basic_move.$(OBJEXT) \
 	sample_player-bhv_basic_offensive_kick.$(OBJEXT) \
 	sample_player-bhv_basic_tackle.$(OBJEXT) \
 	sample_player-bhv_custom_before_kick_off.$(OBJEXT) \
+	sample_player-bhv_defensive_move.$(OBJEXT) \
 	sample_player-bhv_go_to_static_ball.$(OBJEXT) \
 	sample_player-bhv_goalie_basic_move.$(OBJEXT) \
 	sample_player-bhv_goalie_chase_ball.$(OBJEXT) \
@@ -273,19 +274,19 @@ am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/keepaway.sh.in \
 	$(srcdir)/start.sh.in $(srcdir)/train.sh.in \
 	$(top_srcdir)/config/depcomp
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/hatakeyama/rcss/work/my_team/config/missing aclocal-1.15
+ACLOCAL = ${SHELL} /home/hatakeyama/rcss/teams/base_team/My_team/my_team/config/missing aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
-AUTOCONF = ${SHELL} /home/hatakeyama/rcss/work/my_team/config/missing autoconf
-AUTOHEADER = ${SHELL} /home/hatakeyama/rcss/work/my_team/config/missing autoheader
-AUTOMAKE = ${SHELL} /home/hatakeyama/rcss/work/my_team/config/missing automake-1.15
+AUTOCONF = ${SHELL} /home/hatakeyama/rcss/teams/base_team/My_team/my_team/config/missing autoconf
+AUTOHEADER = ${SHELL} /home/hatakeyama/rcss/teams/base_team/My_team/my_team/config/missing autoheader
+AUTOMAKE = ${SHELL} /home/hatakeyama/rcss/teams/base_team/My_team/my_team/config/missing automake-1.15
 AWK = mawk
 BOOST_CPPFLAGS = -I/usr/include
 BOOST_LDFLAGS = -L/usr/lib64
 CC = gcc
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
-CPPFLAGS =  -I/usr/include -I/home/hatakeyama/rcss/include
+CPPFLAGS =  -I/usr/include -I/home/hatakeyama/rcss/teams/base_team/Agent2d/include
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
@@ -304,13 +305,13 @@ INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-LDFLAGS =  -L/usr/lib64 -L/home/hatakeyama/rcss/lib
+LDFLAGS =  -L/usr/lib64 -L/home/hatakeyama/rcss/teams/base_team/Agent2d/lib
 LIBOBJS = 
-LIBRCSCLIB = /home/hatakeyama/rcss/lib
+LIBRCSCLIB = /home/hatakeyama/rcss/teams/base_team/Agent2d/lib
 LIBS = -lrcsc_agent -lrcsc_ann -lrcsc_net -lrcsc_time -lrcsc_param -lrcsc_gz -lrcsc_rcg -lrcsc_geom -lz -lm 
 LN_S = ln -s
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /home/hatakeyama/rcss/work/my_team/config/missing makeinfo
+MAKEINFO = ${SHELL} /home/hatakeyama/rcss/teams/base_team/My_team/my_team/config/missing makeinfo
 MKDIR_P = /bin/mkdir -p
 OBJEXT = o
 PACKAGE = agent2d
@@ -326,10 +327,10 @@ SET_MAKE =
 SHELL = /bin/bash
 STRIP = 
 VERSION = 3.1.1
-abs_builddir = /home/hatakeyama/rcss/work/my_team/src
-abs_srcdir = /home/hatakeyama/rcss/work/my_team/src
-abs_top_builddir = /home/hatakeyama/rcss/work/my_team
-abs_top_srcdir = /home/hatakeyama/rcss/work/my_team
+abs_builddir = /home/hatakeyama/rcss/teams/base_team/My_team/my_team/src
+abs_srcdir = /home/hatakeyama/rcss/teams/base_team/My_team/my_team/src
+abs_top_builddir = /home/hatakeyama/rcss/teams/base_team/My_team/my_team
+abs_top_srcdir = /home/hatakeyama/rcss/teams/base_team/My_team/my_team
 ac_ct_CC = gcc
 ac_ct_CXX = g++
 am__include = include
@@ -349,7 +350,7 @@ host_alias =
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/hatakeyama/rcss/work/my_team/config/install-sh
+install_sh = ${SHELL} /home/hatakeyama/rcss/teams/base_team/My_team/my_team/config/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -375,6 +376,7 @@ PLAYERSOURCES = \
 	bhv_basic_offensive_kick.cpp \
 	bhv_basic_tackle.cpp \
 	bhv_custom_before_kick_off.cpp \
+	bhv_defensive_move.cpp \
 	bhv_go_to_static_ball.cpp \
 	bhv_goalie_basic_move.cpp \
 	bhv_goalie_chase_ball.cpp \
@@ -418,6 +420,7 @@ PLAYERHEADERS = \
 	bhv_basic_offensive_kick.h \
 	bhv_basic_tackle.h \
 	bhv_custom_before_kick_off.h \
+	bhv_defensive_move.h \
 	bhv_go_to_static_ball.h \
 	bhv_goalie_basic_move.h \
 	bhv_goalie_chase_ball.h \
@@ -702,6 +705,7 @@ include ./$(DEPDIR)/sample_player-bhv_basic_offensive_kick.Po
 include ./$(DEPDIR)/sample_player-bhv_basic_tackle.Po
 include ./$(DEPDIR)/sample_player-bhv_chain_action.Po
 include ./$(DEPDIR)/sample_player-bhv_custom_before_kick_off.Po
+include ./$(DEPDIR)/sample_player-bhv_defensive_move.Po
 include ./$(DEPDIR)/sample_player-bhv_go_to_static_ball.Po
 include ./$(DEPDIR)/sample_player-bhv_goalie_basic_move.Po
 include ./$(DEPDIR)/sample_player-bhv_goalie_chase_ball.Po
@@ -1294,6 +1298,20 @@ sample_player-bhv_custom_before_kick_off.obj: bhv_custom_before_kick_off.cpp
 #	$(AM_V_CXX)source='bhv_custom_before_kick_off.cpp' object='sample_player-bhv_custom_before_kick_off.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sample_player_CXXFLAGS) $(CXXFLAGS) -c -o sample_player-bhv_custom_before_kick_off.obj `if test -f 'bhv_custom_before_kick_off.cpp'; then $(CYGPATH_W) 'bhv_custom_before_kick_off.cpp'; else $(CYGPATH_W) '$(srcdir)/bhv_custom_before_kick_off.cpp'; fi`
+
+sample_player-bhv_defensive_move.o: bhv_defensive_move.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sample_player_CXXFLAGS) $(CXXFLAGS) -MT sample_player-bhv_defensive_move.o -MD -MP -MF $(DEPDIR)/sample_player-bhv_defensive_move.Tpo -c -o sample_player-bhv_defensive_move.o `test -f 'bhv_defensive_move.cpp' || echo '$(srcdir)/'`bhv_defensive_move.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/sample_player-bhv_defensive_move.Tpo $(DEPDIR)/sample_player-bhv_defensive_move.Po
+#	$(AM_V_CXX)source='bhv_defensive_move.cpp' object='sample_player-bhv_defensive_move.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sample_player_CXXFLAGS) $(CXXFLAGS) -c -o sample_player-bhv_defensive_move.o `test -f 'bhv_defensive_move.cpp' || echo '$(srcdir)/'`bhv_defensive_move.cpp
+
+sample_player-bhv_defensive_move.obj: bhv_defensive_move.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sample_player_CXXFLAGS) $(CXXFLAGS) -MT sample_player-bhv_defensive_move.obj -MD -MP -MF $(DEPDIR)/sample_player-bhv_defensive_move.Tpo -c -o sample_player-bhv_defensive_move.obj `if test -f 'bhv_defensive_move.cpp'; then $(CYGPATH_W) 'bhv_defensive_move.cpp'; else $(CYGPATH_W) '$(srcdir)/bhv_defensive_move.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/sample_player-bhv_defensive_move.Tpo $(DEPDIR)/sample_player-bhv_defensive_move.Po
+#	$(AM_V_CXX)source='bhv_defensive_move.cpp' object='sample_player-bhv_defensive_move.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sample_player_CXXFLAGS) $(CXXFLAGS) -c -o sample_player-bhv_defensive_move.obj `if test -f 'bhv_defensive_move.cpp'; then $(CYGPATH_W) 'bhv_defensive_move.cpp'; else $(CYGPATH_W) '$(srcdir)/bhv_defensive_move.cpp'; fi`
 
 sample_player-bhv_go_to_static_ball.o: bhv_go_to_static_ball.cpp
 	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(sample_player_CXXFLAGS) $(CXXFLAGS) -MT sample_player-bhv_go_to_static_ball.o -MD -MP -MF $(DEPDIR)/sample_player-bhv_go_to_static_ball.Tpo -c -o sample_player-bhv_go_to_static_ball.o `test -f 'bhv_go_to_static_ball.cpp' || echo '$(srcdir)/'`bhv_go_to_static_ball.cpp

@@ -33,6 +33,7 @@
 #include "bhv_chain_action.h"
 #include "bhv_basic_offensive_kick.h"
 #include "bhv_basic_move.h"
+#include "bhv_defensive_move.h"
 
 #include <rcsc/player/player_agent.h>
 #include <rcsc/player/debug_client.h>
@@ -104,5 +105,12 @@ RoleSideBack::doKick( PlayerAgent * agent )
 void
 RoleSideBack::doMove( PlayerAgent * agent )
 {
-    Bhv_BasicMove().execute( agent );
+    if ( agent->world().ball().pos().absX() > 9 )
+    {
+	Bhv_DefensiveMove().execute( agent );
+    }
+    else
+    {
+	Bhv_BasicMove().execute( agent );
+    }
 }
